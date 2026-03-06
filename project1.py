@@ -23,7 +23,8 @@ print(f"The highest sales is in {Months[Sales_max_month]} with sales of {Sales[S
 Sales_min_month=np.argmin(Sales)
 print(f"The lowest sales is in {Months[Sales_min_month]} with sales of {Sales[Sales_min_month]}")
 avg_sales=np.mean(Sales)
-above_avg_months=[Months[i] for i in range(len(Sales)) if Sales[i] > avg_sales]
-print("Months with above average sales:",above_avg_months)
-below_avg_months=[Months[i] for i in range(len(Sales)) if Sales[i] < avg_sales]
-print("Months with below average sales:",below_avg_months)
+for i in range(len(Sales)):
+    if Sales[i]>avg_sales:
+        print(f"{Months[i]} has above average sales with sales of {Sales[i]}")
+    else:
+        print(f"{Months[i]} has below average sales with sales of {Sales[i]}")
