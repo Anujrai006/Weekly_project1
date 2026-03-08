@@ -1,4 +1,6 @@
 #Linear Regression with one independent variable
+import pyttsx3
+engine=pyttsx3.init()
 import numpy as np
 x=np.array([1,2,3,4,5]) #independent variable
 y=np.array([2,4,6,8,10]) #dependent variable
