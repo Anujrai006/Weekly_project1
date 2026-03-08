@@ -16,3 +16,4 @@ print("the equation of the line is: y =",slope,"x +",intercept)
 x_predict=float(input("Enter a value of x to predict y:"))
 y_predict=slope*x_predict+intercept #predicting the value of y for the given x
 print(f"The predicted value of y for x={x_predict} is {y_predict}")
+engine.say(f"The predicted value of y for x={x_predict} is {y_predict}")
