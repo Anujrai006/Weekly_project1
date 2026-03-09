@@ -1,5 +1,5 @@
 import numpy as np
-
+#python data handling
 class Student_info:
     def __init__(self,name,age,Class):
         self.name=name
