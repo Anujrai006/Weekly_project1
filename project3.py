@@ -1,5 +1,5 @@
 import numpy as np
-
+#OOPS with data structure
 class Student_info:
     def __init__(self,name,age,Class):
         self.name=name
@@ -26,3 +26,4 @@ for i in range(2,n+2):
     }
     
 print(students)
+#later i will updat ethis with file handling concepts Stay with me
