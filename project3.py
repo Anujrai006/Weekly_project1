@@ -24,6 +24,35 @@ for i in range(2,n+2):
         "age":s.age,
         "class":s.Class,
     }
+
+
+def save_students(students):
+    with open("student.txt","w") as f:
+        for key,value in students.items():
+            f.write(f"{key},{value["name"]},{value["age"]},{value["class"]} \n")
+
+
+def load_students():
+    students={}
+    try:
+        with open("student.txt","r") as f:
+         for line in f:
+            parts=line.strip().split(",")
+            students[parts[0]] =  {
+                "name":parts[1],
+                 "age" :parts[2],
+                 "class":parts[3]
+            }
+    except:
+        students={}
+        return students
     
+students=load_students()
+save_students(students)
 print(students)
+
+
+
+
+
 #later i will updat ethis with file handling concepts Stay with me
