@@ -5,36 +5,21 @@ class Student_info:
         self.name=name
         self.age=age
         self.Class=Class
-students={
-    "user1":{
-        "name":"anuj",
-        "age":17,
-        "class":18
-    }
-}
-print(students)
-n=int(input("enter the number of student:"))
-for i in range(2,n+2):
-    name=input(f"enter the name for std {i}:")
-    age=input(f"enter the age of std {name}:")
-    Class=input(f"enter the Class of std {name}:")
-    s=Student_info(name,age,Class)
-    students[f"user{i}"]={
-        "name":s.name,
-        "age":s.age,
-        "class":s.Class,
-    }
+# students={
+#     "user1":{
+#         "name":"anuj",
+#         "age":17,
+#         "class":18
+#     }
+# }
+# print(students)
 
 
-def save_students(students):
-    with open("student.txt","w") as f:
-        for key,value in students.items():
-            f.write(f"{key},{value["name"]},{value["age"]},{value["class"]} \n")
 
-
+students={}
 def load_students():
-    students={}
     try:
+        students={}
         with open("student.txt","r") as f:
          for line in f:
             parts=line.strip().split(",")
@@ -45,9 +30,24 @@ def load_students():
             }
     except:
         students={}
-        return students
-    
-students=load_students()
+    return students
+students=load_students()    
+start=len(students)+1
+n=int(input("enter the number of student:"))
+for i in range(start,start+n):
+    name=input(f"enter the name for std {i}:")
+    age=input(f"enter the age of std {name}:")
+    Class=input(f"enter the Class of std {name}:")
+    s=Student_info(name,age,Class)
+    students[f"user{i}"]={
+        "name":s.name,
+        "age":s.age,
+        "class":s.Class,
+    }
+def save_students(students):
+    with open("student.txt","w") as f:
+        for key,value in students.items():
+            f.write(f"{key},{value['name']},{value['age']},{value['class']}\n")
 save_students(students)
 print(students)
 
